@@ -10,3 +10,5 @@ The purpose of our application is gathering people of same nationalities (mostly
 
 ## Tasks <a name="task"></a>
 No task available yet.
+### completed tasks
+- [x] initialized backend with Django Framework
