@@ -36,7 +36,8 @@ public class HttpUrlConnection {
         // 1. Send a "GET" request, so that you can extract the form's data.
         String page = http.GetPageContent(url);
         //System.out.println(page);
-        String postParams = http.getFormParams(page, "kcha", "hiHelloDkssud1@");
+        String postParams = http.getFormParams(page, "kcha", "hiHellodkssud1@");
+        //System.out.println(postParams);
 
         // 2. Construct above post's content and then send a POST request for
         // authentication
@@ -57,15 +58,15 @@ public class HttpUrlConnection {
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Host", "www.purdue.edu");
         conn.setRequestProperty("User-Agent", USER_AGENT);
-        System.out.println(USER_AGENT);
+        //System.out.println(USER_AGENT);
         conn.setRequestProperty("Accept",
                 "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 //        for (String cookie : this.cookies) {
-//            System.out.println(this.cookies);
-//            //conn.addRequestProperty("Cookie", cookie.split(";", 1)[0]);
+//            //System.out.println(this.cookies);
+//            conn.addRequestProperty("Cookie", cookie.split(";", 1)[0]);
 //        }
-        conn.addRequestProperty("Cookie", "JSESSIONID=BC7DEF2AEB2AE67B3C4FE3E20885B796; __atuvc=1%7C2; __atssc=google%3B1; s_fid=0457FCCE5B097C32-147D6D2BE5819655; _ga=GA1.2.1319501092.1473218070; ajs_user_id=null; ajs_group_id=null; ajs_anonymous_id=%22482abf38-e145-4373-a2c0-79a0f32e2c83%22; mp_2e05c40c5585ba977fbcdfa555a2f51d_mixpanel=%7B%22distinct_id%22%3A%20%22160fdeb07683f5-082ce4417e2f6d-4323461-1fa400-160fdeb0769fcf%22%2C%22mp_lib%22%3A%20%22Segment%3A%20web%22%2C%22%24search_engine%22%3A%20%22google%22%2C%22%24initial_referrer%22%3A%20%22https%3A%2F%2Fwww.google.com%2F%22%2C%22%24initial_referring_domain%22%3A%20%22www.google.com%22%7D; __utma=141228339.1319501092.1473218070.1525456119.1525984416.13; __utmz=141228339.1525984416.13.6.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); BIGipServer~WEB~pool_lppwebapa01.itap.purdue.edu_web=!Mjj/1STNwKPxfO6rRDt8gwNZROleqIXCxAwJ1WwrM7h12fUw0YL+/pZ2QeDK0QDnzh6wDSaD7A==; BIGipServer~WEB~pool_www.purdue.edu_ITSP_web=!WsVSa4Im+ecZmkWrRDt8gwNZROleqMr2Y9tM83wZly+Z5uizPExKyD51Bp6/Q3Rgm9N1dLf1LA==");
+        conn.addRequestProperty("Cookie", "JSESSIONID=F0DDE388F8CB6962340472C8C542B071; __atuvc=1%7C2; __atssc=google%3B1; s_fid=0457FCCE5B097C32-147D6D2BE5819655; _ga=GA1.2.1319501092.1473218070; ajs_user_id=null; ajs_group_id=null; ajs_anonymous_id=%22482abf38-e145-4373-a2c0-79a0f32e2c83%22; mp_2e05c40c5585ba977fbcdfa555a2f51d_mixpanel=%7B%22distinct_id%22%3A%20%22160fdeb07683f5-082ce4417e2f6d-4323461-1fa400-160fdeb0769fcf%22%2C%22mp_lib%22%3A%20%22Segment%3A%20web%22%2C%22%24search_engine%22%3A%20%22google%22%2C%22%24initial_referrer%22%3A%20%22https%3A%2F%2Fwww.google.com%2F%22%2C%22%24initial_referring_domain%22%3A%20%22www.google.com%22%7D; __utma=141228339.1319501092.1473218070.1525456119.1525984416.13; __utmz=141228339.1525984416.13.6.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); BIGipServer~WEB~pool_lppwebapa01.itap.purdue.edu_web=!Mjj/1STNwKPxfO6rRDt8gwNZROleqIXCxAwJ1WwrM7h12fUw0YL+/pZ2QeDK0QDnzh6wDSaD7A==; BIGipServer~WEB~pool_www.purdue.edu_ITSP_web=!9sBSAuJ7RbeqiOCrRDt8gwNZROleqCdJKGWcXDgNyzjtQP/e6MJ0B8CMFwHEs5S0fJfGwwbvag==");
         conn.setRequestProperty("Connection", "keep-alive");
         conn.setRequestProperty("Referer", "https://www.purdue.edu/apps/account/cas/login?service=https%3A%2F%2Fwl.mypurdue.purdue.edu");
         conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -81,6 +82,7 @@ public class HttpUrlConnection {
         wr.close();
 
         int responseCode = conn.getResponseCode();
+        //System.out.println(responseCode);
         System.out.println("\nSending 'POST' request to URL : " + url);
         System.out.println("Post parameters : " + postParams);
         System.out.println("Response Code : " + responseCode);
@@ -95,7 +97,7 @@ public class HttpUrlConnection {
         }
         in.close();
 
-        //System.out.println(response.toString());
+        System.out.println(response.toString());
 
     }
 
@@ -155,9 +157,9 @@ public class HttpUrlConnection {
             String key = inputElement.attr("name");
             String value = inputElement.attr("value");
 
-            if (key.equals("Email"))
+            if (key.equals("username"))
                 value = username;
-            else if (key.equals("Passwd"))
+            else if (key.equals("password"))
                 value = password;
             paramList.add(key + "=" + URLEncoder.encode(value, "UTF-8"));
         }
