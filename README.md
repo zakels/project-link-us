@@ -12,4 +12,4 @@ The purpose of our application is gathering people of same nationalities (mostly
 ## Tasks <a name="task"></a>
 No task available yet.
 ### completed tasks <a name="ctask"></a>
-- [x] initialized backend with Django Framework
+- [x] initialized backend with Spring Framework
