@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 
 @RestController
-@RequestMapping("newusers")
+@RequestMapping("newUsers")
 public class newUserController {
 
     User user = new User();
